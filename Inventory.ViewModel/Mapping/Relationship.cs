@@ -2,9 +2,7 @@
 using Inventory.ViewModel.BillViewModel;
 using Inventory.ViewModel.CustomerViewModel;
 using Inventory.ViewModel.InvoiceViewModel;
-using Inventory.ViewModel.ProductViewMmodel;
 using Inventory.ViewModel.ProductViewModel;
-using System.ComponentModel;
 
 namespace Inventory.ViewModel.Mapping
 {
