@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace Inventory.Models
+﻿namespace Inventory.Models
 {
     public class Bank
     {
