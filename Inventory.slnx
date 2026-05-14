@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Inventory.Models/Inventory.Models.csproj" />
+  <Project Path="Inventory.Repository/Inventory.Repository.csproj" />
+  <Project Path="Inventory.Services/Inventory.Services.csproj" />
+  <Project Path="Inventory.Utility/Inventory.Utility.csproj" />
+  <Project Path="Inventory.ViewModel/Inventory.ViewModel.csproj" Id="d28b8294-78e2-48a4-96a3-86ccffebf234" />
+  <Project Path="Inventory.Web/Inventory.Web.csproj" />
+</Solution>
