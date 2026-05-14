@@ -1,8 +1,4 @@
-﻿using Inventory.Repository.Paging;
-using Inventory.ViewModel.ProductViewModel;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Inventory.ViewModel.ProductViewModel;
 
 namespace Inventory.Repository.ProductService
 {
