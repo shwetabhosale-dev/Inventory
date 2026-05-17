@@ -50,12 +50,7 @@ namespace Inventory.ViewModel.Mapping
             List<BillTypeListViewModel> list = new List<BillTypeListViewModel>();
             foreach (var billTypeItem in billTypeModel)
             {
-                list.Add(new BillTypeListViewModel
-                {
-                    BillTypeId = billTypeItem.BillTypeId,
-                    BillTypeName = billTypeItem.BillTypeName,
-                    Description = billTypeItem.Description
-                });
+                list.Add(new BillTypeListViewModel(billTypeItem));
             }
             return list;
         }
@@ -95,16 +90,16 @@ namespace Inventory.ViewModel.Mapping
         public static IEnumerable<InvoiceListViewModel> InvoiceListToInvoiceListViewModel(this IEnumerable<Invoice> invoices)
         {
             List<InvoiceListViewModel> list = new List<InvoiceListViewModel>();
-            foreach (var InvoiceTtem in invoices)
+            foreach (var InvoiceItem in invoices)
             {
                 list.Add(new InvoiceListViewModel
                 {
-                    InvoiceId = InvoiceTtem.InvoiceId,
-                    InvoiceName = InvoiceTtem.InvoiceName,
-                    InvoiceDate = InvoiceTtem.InvoiceDate,
-                    InvoiceDueDate = InvoiceTtem.InvoiceDueDate,
-                    InvoiceTypeId = InvoiceTtem.InvoiceTypeId,
-                    ShipmentId = InvoiceTtem.ShipmentId
+                    InvoiceId = InvoiceItem.InvoiceId,
+                    InvoiceName = InvoiceItem.InvoiceName,
+                    InvoiceDate = InvoiceItem.InvoiceDate,
+                    InvoiceDueDate = InvoiceItem.InvoiceDueDate,
+                    InvoiceTypeId = InvoiceItem.InvoiceTypeId,
+                    ShipmentId = InvoiceItem.ShipmentId
 
                 });
             }
@@ -114,21 +109,21 @@ namespace Inventory.ViewModel.Mapping
         public static IEnumerable<ProductListViewModel> ProductListToProductListViewModel(this IEnumerable<Product> products)
         {
             List<ProductListViewModel> list = new List<ProductListViewModel>();
-            foreach (var ProductTtem in products)
+            foreach (var ProductItem in products)
             {
                 list.Add(new ProductListViewModel
                 {
-                    ProductId = ProductTtem.ProductId,
-                    ProductCode = ProductTtem.ProductCode,
-                    ProductImage = ProductTtem.ProductImage,
-                    ProductName = ProductTtem.ProductName,
-                    ByingPrice = ProductTtem.ByingPrice,
-                    SellingPrice = ProductTtem.SellingPrice,
-                    Barcode = ProductTtem.Barcode,
-                    BranchId = ProductTtem.BranchId,
-                    CurrencyId = ProductTtem.CurrencyId,
-                    Description = ProductTtem.Description,
-                    MeasureUnitId = ProductTtem.MeasureUnitId
+                    ProductId = ProductItem.ProductId,
+                    ProductCode = ProductItem.ProductCode,
+                    ProductImage = ProductItem.ProductImage,
+                    ProductName = ProductItem.ProductName,
+                    ByingPrice = ProductItem.ByingPrice,
+                    SellingPrice = ProductItem.SellingPrice,
+                    Barcode = ProductItem.Barcode,
+                    BranchId = ProductItem.BranchId,
+                    CurrencyId = ProductItem.CurrencyId,
+                    Description = ProductItem.Description,
+                    MeasureUnitId = ProductItem.MeasureUnitId
                 });
             }
             return list;
