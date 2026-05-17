@@ -31,7 +31,8 @@ namespace Inventory.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _billTypeRepo.Add(viewModel);
+                //await _billTypeRepo.Add(viewModel);
+                await _billTypeRepo.AddByStoredProcedure(viewModel);
                 return RedirectToAction("Index");
             }
 

@@ -2,6 +2,7 @@
 using Inventory.Repository.Paging;
 using Inventory.ViewModel.BillViewModel;
 using Inventory.ViewModel.Mapping;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Dynamic.Core;
 
@@ -99,6 +100,18 @@ namespace Inventory.Repository.BillTypeService
                 return new BillTypeListViewModel(billType);
             }
             throw new Exception("BillType not found");
+        }
+
+        public async Task AddByStoredProcedure(BillTypeListViewModel viewModel)
+        {
+            var parameters = new[]
+            {
+                new SqlParameter("@BillTypeName", viewModel.BillTypeName),
+                new SqlParameter("@Description", viewModel.Description)
+            };
+
+            await _applicationDbContext.Database.ExecuteSqlRawAsync(
+                "EXEC Add_Bill_Type @BillTypeName, @Description", parameters);
         }
     }
 }

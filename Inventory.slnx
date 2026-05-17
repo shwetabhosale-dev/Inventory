@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/Database/" />
+  <Folder Name="/Database/StoredProcedures/" />
+  <Folder Name="/Database/StoredProcedures/BillType/">
+    <File Path="Add_Bill_Type.sql" />
+  </Folder>
   <Project Path="Inventory.Models/Inventory.Models.csproj" />
   <Project Path="Inventory.Repository/Inventory.Repository.csproj" />
   <Project Path="Inventory.Services/Inventory.Services.csproj" />

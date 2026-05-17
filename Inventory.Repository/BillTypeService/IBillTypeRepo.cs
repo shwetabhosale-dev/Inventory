@@ -14,5 +14,7 @@ namespace Inventory.Repository.BillTypeService
         Task Delete(int billTypeId);
 
         Task<BillTypeListViewModel> GetById(int billTypeId);
+
+        Task AddByStoredProcedure(BillTypeListViewModel viewModel);
     }
 }
