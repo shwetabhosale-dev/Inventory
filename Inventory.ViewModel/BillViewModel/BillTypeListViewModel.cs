@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Inventory.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Inventory.ViewModel.BillViewModel
 {
@@ -7,7 +8,18 @@ namespace Inventory.ViewModel.BillViewModel
         public int BillTypeId { get; set; }
 
         [Required]
-        public string BillTypeName { get; set; }
-        public string Description { get; set; }
+        public string BillTypeName { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+
+        public BillTypeListViewModel()
+        {
+        }
+
+        public BillTypeListViewModel(BillType billType)
+        {
+            BillTypeId = billType.BillTypeId;
+            BillTypeName = billType.BillTypeName;
+            Description = billType.Description;
+        }
     }
 }
