@@ -1,0 +1,48 @@
+﻿@using Inventory.Repository.Paging;
+@using Inventory.ViewModel.SalesViewModel
+
+@model PaginatedList<SalesTypeListViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row mb-3">
+        <div class="col-6">
+            <a asp-action="Create" class="btn btn-primary"> Add New Sales Type </a>
+        </div>
+        <div class="col-6 text-end"> Search Here </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Sales-Type Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model){
+                    <tr>
+                        <td>@item.SalesTypeId</td>
+                        <td>@item.SalesTypeName</td>
+                        <td>@item.Description</td>
+                            <td><a asp-action="Edit" asp-route-salesTypeId="@item.SalesTypeId" class="btn btn-primary btn-sm"> Edit </a>
+                        <td>
+                            <form asp-action="Delete" asp-route-salesTypeId="@item.SalesTypeId" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
