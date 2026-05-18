@@ -3,6 +3,7 @@ using Inventory.ViewModel.BillViewModel;
 using Inventory.ViewModel.CustomerViewModel;
 using Inventory.ViewModel.InvoiceViewModel;
 using Inventory.ViewModel.ProductViewModel;
+using Inventory.ViewModel.SalesViewModel;
 
 namespace Inventory.ViewModel.Mapping
 {
@@ -72,17 +73,12 @@ namespace Inventory.ViewModel.Mapping
             return list;
         }
 
-        public static IEnumerable<InvoiceTypeListViewModel> InvoiceTypeModelToInvoiceTypeListViewModel(this IEnumerable<InvoiceType> invoiceTypes)
+        public static IEnumerable<InvoiceTypeListViewModel> InvoiceTypeModelToInvoiceTypeListViewModel(this IEnumerable<InvoiceType> invoiceTypesModel)
         {
             List<InvoiceTypeListViewModel> list = new List<InvoiceTypeListViewModel>();
-            foreach (var InvoiceTypeItem in invoiceTypes)
+            foreach (var InvoiceTypeItem in invoiceTypesModel)
             {
-                list.Add(new InvoiceTypeListViewModel
-                {
-                    InvoiceTypeId = InvoiceTypeItem.InvoiceTypeId,
-                    InvoiceTypeName = InvoiceTypeItem.InvoiceTypeName,
-                    Description = InvoiceTypeItem.Description
-                });
+                list.Add(new InvoiceTypeListViewModel(InvoiceTypeItem));
             }
             return list;
         }
@@ -132,7 +128,7 @@ namespace Inventory.ViewModel.Mapping
         public static IEnumerable<ProductTypeListViewModel> ProductTypeToProductTypeListViewModel(this IEnumerable<ProductType> ProductTypes)
         {
             List<ProductTypeListViewModel> list = new List<ProductTypeListViewModel>();
-            foreach(var ProductTypeTtem in ProductTypes)
+            foreach (var ProductTypeTtem in ProductTypes)
             {
                 list.Add(new ProductTypeListViewModel
                 {
@@ -143,5 +139,26 @@ namespace Inventory.ViewModel.Mapping
             }
             return list;
         }
+
+        public static IEnumerable<SalesTypeListViewModel> SalesTypeToSalesTypeListViewModel(this IEnumerable<SalesType> salesTypesModel)
+        {
+            List<SalesTypeListViewModel> list = new List<SalesTypeListViewModel>();
+            foreach (var SalesTypeItem in salesTypesModel)
+            {
+                list.Add(new SalesTypeListViewModel(SalesTypeItem));
+            }
+            return list;
+        }
+
+        public static IEnumerable<InvoiceTypeListViewModel> InvoiceTypeToInvoiceTypeListViewModels(this IEnumerable<InvoiceType> InvoiceTypesModel)
+        {
+            List<InvoiceTypeListViewModel> list = new List<InvoiceTypeListViewModel>();
+            foreach (var InvoiceTypeItem in InvoiceTypesModel)
+            {
+                list.Add(new InvoiceTypeListViewModel(InvoiceTypeItem));
+            }
+            return list;
+        }
+
     }
 }

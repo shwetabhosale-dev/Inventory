@@ -1,5 +1,4 @@
 <Solution>
-  <Project Path="Inventory.Database/Inventory.Database.csproj" Id="d44177f9-38ca-46c5-af57-384e0cc84984" />
   <Project Path="Inventory.Models/Inventory.Models.csproj" />
   <Project Path="Inventory.Repository/Inventory.Repository.csproj" />
   <Project Path="Inventory.Services/Inventory.Services.csproj" />

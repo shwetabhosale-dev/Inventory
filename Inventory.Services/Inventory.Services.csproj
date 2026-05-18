@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="StoredProcedures\BillType\Add_Bill_Type.sql" />
+  </ItemGroup>
+
 </Project>

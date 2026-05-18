@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Inventory.Repository.BillTypeService;
 using Inventory.Models;
+using Inventory.Repository.SalesTypeService;
+using Inventory.Repository.InvoiceTypeService;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
@@ -16,6 +18,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options => options.SignIn.Re
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IBillTypeRepo, BillTypeRepo>();
+builder.Services.AddScoped<ISalesTypeService, SalesTypesService>();
+builder.Services.AddScoped<IInvoiceTypeRepo, InvoiceTypeRepo>();
 builder.Services.Configure<SuperAdmin>(builder.Configuration.GetSection("SuperAdmin"));
 
 var app = builder.Build();
